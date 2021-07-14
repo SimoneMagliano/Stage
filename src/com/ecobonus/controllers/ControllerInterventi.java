@@ -102,17 +102,10 @@ public class ControllerInterventi {
 	@GetMapping("/showFormUpdateInizioLavoro")
 	public String showFormUpdateInizioLavoro(@RequestParam("idInizioLavoro") int theIdInizioLavoro,
 									Model theModel) {
-		//List<InizioLavoro> inizioLavoriList = InizioLavoriService.getInizioLavoro();
-		//InizioLavoro inizioLavoro = inizioLavoriService.getInizioLavoro(theIdInizioLavoro);	
-		//theModel.addAttribute("inizioLavori", inizioLavoriList);
+	
 		return "interventi-form";
 	}
-	//@PostMapping("/saveInizioLavoro")
-	//public String saveInizioLavoro(@ModelAttribute("inizioLavoro") InizioLavoro inizioLavoro, @RequestParam("idInizioLavoro") int idIniziolavoro) {
-	//	InizioLavoro inizioLavoro = inizioLavoriService.getInizioLavoro(idIniziolavoro);
-	//	inizioLavoriService.saveInizioLavoro(inizioLavoro);		
-	//	return "redirect:/interventi/list";
-//}
+
 	@GetMapping("/showFormAddInizioLavoro")
 	public String showFormAddInizioLavoro(@RequestParam("idIntervento") int theIdIntervento, Model theModel) {
 		InizioLavoro inizioLavoro = inizioLavoriService.getInizioLavoro(theIdIntervento);
