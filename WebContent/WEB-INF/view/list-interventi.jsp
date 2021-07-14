@@ -32,6 +32,7 @@
                 			<div class="col-1">Descrizione</div>
 							<div class="col-1">Referente</div>
 							<div class="col-1">Contatto</div>
+							<div class="col-1">Inizio Lavori</div>
 							<div class="col-1">Regione</div>
 							<div class="col-1">Modifica</div>
 						</div>
@@ -66,6 +67,9 @@
                     		<div class="col-1">
                     			<c:out value="${tempInterventi.contatto}"></c:out>
                     		</div>  
+                    		<div class="col-1">
+                    			<c:out value="${tempInterventi.inizioLavoro.descrizione}"></c:out>
+                    		</div>
                     		<div class="col-1">
                     			<c:out value="${tempInterventi.regione.nomeRegione}"></c:out>
                     		</div>  
