@@ -30,7 +30,7 @@ public class InizioLavoriServiceImpl implements InizioLavoriService{
 	@Transactional
 	public InizioLavoro getInizioLavoro(int idIntervento) {		
 		Intervento intervento = interventiDAO.getIntervento(idIntervento);
-		return inizioLavoriDAO.getInizioLavoro(idIntervento);
+		return inizioLavoriDAO.getInizioLavoro(intervento);
 	}
 
 	@Override

@@ -34,10 +34,10 @@ public class InizioLavoriDAOImpl implements InizioLavoriDAO {
 			Session currentSession = sessionFactory.getCurrentSession();
 			Query<InizioLavoro> theQuery = 
 					currentSession.createQuery("from InizioLavoro where idIntervento=:idIntervento", InizioLavoro.class);
-			InizioLavoro inizioLavoro = theQuery.getSingleResult();
+			InizioLavoro inizioLavoro = theQuery.uniqueResult();
 			if(inizioLavoro==null) {
 				inizioLavoro = new InizioLavoro();
-				inizioLavoro.setIdIntervento(intervento);
+				inizioLavoro.setIntervento(intervento);
 			}
 					return inizioLavoro;
 	}
@@ -50,11 +50,5 @@ public class InizioLavoriDAOImpl implements InizioLavoriDAO {
 					theQuery.setParameter("idInizioLavori", theIdInizioLavori);
 					theQuery.executeUpdate();		
 	}
-
-	@Override
-	public InizioLavoro getInizioLavoro(int theIdInizioLavori) {
-		// TODO Auto-generated method stub
-		return null;
-	} 
 
 }

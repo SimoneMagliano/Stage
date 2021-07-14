@@ -88,13 +88,13 @@ public class ControllerInterventi {
 		return "interventi-form";
 	}
 	
-	@GetMapping("/list")
+	@GetMapping("/listInizioLavori")
 	public String listInizioLavori(Model theModel) {		
 		List<InizioLavoro> InizioLavoriList = inizioLavoriService.getList();
 		theModel.addAttribute("inizioLavori", InizioLavoriList);
 		return "list-interventi";
 	}
-	@GetMapping("/delete")
+	@GetMapping("/deleteInizioLavoro")
 	public String deleteInizioLavoro(@RequestParam("idInizioLavori") int theIdInizioLavoro) {
 		inizioLavoriService.deleteInizioLavoro(theIdInizioLavoro);
 		return "redirect:/interventi/list";

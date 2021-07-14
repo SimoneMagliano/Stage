@@ -1,7 +1,6 @@
 package com.ecobonus.entity;
 
-import java.util.Set;
-
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,12 +18,18 @@ public class InizioLavoro {
 	@Column(name = "idInizioLavori")
 	private String idInizioLavori;
 	
-	@OneToOne(mappedBy = "idIntervento")
-	 private Set<Intervento> intervento;
+	@OneToOne(mappedBy="inizioLavoro", cascade={CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST,CascadeType.REFRESH})
+	 private Intervento intervento;
 	
-	public Set<Intervento> getInizioLavoro() {
+	
+	public Intervento getIntervento() {
 		return intervento;
 	}
+
+	public void setIntervento(Intervento intervento) {
+		this.intervento = intervento;
+	}
+
 	@Column(name = "DataInizio")
 	String dataInizio;
 	
@@ -42,14 +47,6 @@ public class InizioLavoro {
 
 	public void setIdInizioLavori(String idInizioLavori) {
 		this.idInizioLavori = idInizioLavori;
-	}
-
-	public Set<Intervento> getIdIntervento() {
-		return intervento;
-	}
-
-	public void setIdIntervento(Set<Intervento> idIntervento) {
-		this.intervento = idIntervento;
 	}
 
 	public String getDataInizio() {
@@ -70,7 +67,7 @@ public class InizioLavoro {
 
 	@Override
 	public String toString() {
-		return "InizioLavoro [idInizioLavori=" + idInizioLavori + ", idIntervento=" + intervento + ", dataInizio="
+		return "InizioLavoro [idInizioLavori=" + idInizioLavori + ", intervento=" + intervento + ", dataInizio="
 				+ dataInizio + ", descrizione=" + descrizione + "]";
 	}
 	
