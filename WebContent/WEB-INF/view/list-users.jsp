@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%=session.getAttribute("session.prop")%>
 <!DOCTYPE html>
 <html>
 <head>

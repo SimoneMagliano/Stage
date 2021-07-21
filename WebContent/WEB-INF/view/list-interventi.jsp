@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%=session.getAttribute("session.prop")%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,6 +34,9 @@
 							<div class="col-1">Referente</div>
 							<div class="col-1">Contatto</div>
 							<div class="col-1">Inizio Lavori</div>
+							<div class="col-1">Primo SAL</div>
+							<div class="col-1">Secondo SAL</div>
+							<div class="col-1">Fine Lavori</div>
 							<div class="col-1">Regione</div>
 							<div class="col-1">Modifica</div>
 						</div>
@@ -69,6 +73,15 @@
                     		</div>  
                     		<div class="col-1">
                     			<c:out value="${tempInterventi.inizioLavoro.descrizione}"></c:out>
+                    		</div>
+                    		<div class="col-1">
+                    			<c:out value="${tempInterventi.primoSal.descrizione}"></c:out>
+                    		</div>
+                    		<div class="col-1">
+                    			<c:out value="${tempInterventi.secondoSal.descrizione}"></c:out>
+                    		</div>
+                    		<div class="col-1">
+                    			<c:out value="${tempInterventi.fineLavoro.descrizione}"></c:out>
                     		</div>
                     		<div class="col-1">
                     			<c:out value="${tempInterventi.regione.nomeRegione}"></c:out>
