@@ -3,6 +3,7 @@ package com.ecobonus.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.ecobonus.entity.Regione;
 import com.ecobonus.entity.TipoUtente;
@@ -19,6 +21,8 @@ import com.ecobonus.service.TipoUtenteService;
 import com.ecobonus.service.UserService;
 
 @Controller
+@Scope("session")
+@SessionAttributes("User")
 @RequestMapping("/user")
 public class UserController {
 

@@ -18,7 +18,7 @@ public class SecondoSal {
 	@Column(name = "idSecondoSal")
 	private String idSecondoSal;
 	
-	@OneToOne(mappedBy="secondosal", cascade={CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST,CascadeType.REFRESH})
+	@OneToOne(mappedBy="secondoSal", cascade={CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST,CascadeType.REFRESH})
 	 private Intervento intervento;
 	
 	

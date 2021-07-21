@@ -11,7 +11,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
 @Entity
+@Component
+@Scope("session")
 @Table(name = "interventi")
 public class Intervento {
 	@Id
@@ -35,6 +40,18 @@ public class Intervento {
     @JoinColumn(name="idInizioLavori")
     private InizioLavoro inizioLavoro;
     
+    @OneToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name="idFineLavori")
+    private FineLavoro fineLavoro;
+    
+    @OneToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name="idPrimoSal")
+    private PrimoSal primoSal;
+    
+    @OneToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name="idSecondoSal")
+    private SecondoSal secondoSal;
+    
 	@ManyToOne
     @JoinColumn(name="IdRegione")
     private Regione regione;
@@ -50,8 +67,8 @@ public class Intervento {
 	@Override
 	public String toString() {
 		return "Intervento [idIntervento=" + idIntervento + ", descrizione=" + descrizione + ", referente=" + referente
-				+ ", contatto=" + contatto + ", cliente=" + cliente + ", regione=" + regione + ", tipoIntervento="
-				+ tipoIntervento + ", sede=" + sede + "]";
+				+ ", contatto=" + contatto + ", cliente=" + cliente + ", inizioLavoro=" + inizioLavoro + ", fineLavoro="
+				+ fineLavoro + ", regione=" + regione + ", tipoIntervento=" + tipoIntervento + ", sede=" + sede + "]";
 	}
 
 	public Intervento() {
@@ -128,6 +145,30 @@ public class Intervento {
 
 	public void setInizioLavoro(InizioLavoro inizioLavoro) {
 		this.inizioLavoro = inizioLavoro;
+	}
+
+	public FineLavoro getFineLavoro() {
+		return fineLavoro;
+	}
+
+	public void setFineLavoro(FineLavoro fineLavoro) {
+		this.fineLavoro = fineLavoro;
+	}
+
+	public PrimoSal getPrimoSal() {
+		return primoSal;
+	}
+
+	public void setPrimoSal(PrimoSal primoSal) {
+		this.primoSal = primoSal;
+	}
+
+	public SecondoSal getSecondoSal() {
+		return secondoSal;
+	}
+
+	public void setSecondoSal(SecondoSal secondoSal) {
+		this.secondoSal = secondoSal;
 	}
 
 
