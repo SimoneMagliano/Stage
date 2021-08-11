@@ -2,6 +2,8 @@ package com.ecobonus.controllers;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
@@ -21,8 +24,6 @@ import com.ecobonus.service.TipoUtenteService;
 import com.ecobonus.service.UserService;
 
 @Controller
-@Scope("session")
-@SessionAttributes("User")
 @RequestMapping("/user")
 public class UserController {
 
@@ -34,10 +35,16 @@ public class UserController {
 	private RegioneService regioneService;
 	
 	@GetMapping("/list")
-	public String listUsers(Model theModel) {		
-		List<User> theUsers = userService.getList();
-		theModel.addAttribute("users", theUsers);
-		return "list-users";
+	public String listUsers(HttpSession session, Model theModel) {
+		User sessionUser = (User)session.getAttribute("user");
+		if( sessionUser!=null && sessionUser.getCognome()!=null && !sessionUser.getCognome().isEmpty()) {
+			List<User> theUsers = userService.getList();
+			theModel.addAttribute("users", theUsers);
+			return "list-users";
+		} else {
+			theModel.addAttribute("error", "User is not valid");
+			return "user-login";
+		}
 	}
 	
 	@GetMapping("/showFormAddUser")
@@ -89,6 +96,22 @@ public class UserController {
 		theModel.addAttribute("tipiUtente", tipiUtenteList);
 		theModel.addAttribute("regioni", regioniList);
 		return "user-login";
+	}
+
+	@RequestMapping(value = "authenticateTheUser", method = RequestMethod.POST)
+	public String authenticateUser(HttpSession session, Model theModel, @RequestParam("email") String email, @RequestParam("password") String password) {
+		
+		User user = userService.getUser(email, password);	
+
+		if(user!=null) {
+			session.setAttribute("user", user);
+			return "home";
+		} else {
+			theModel.addAttribute("user", user);
+			theModel.addAttribute("error", "User is not valid");
+			return "user-login";
+		}
+		
 	}
 	
 	@GetMapping("/home")
