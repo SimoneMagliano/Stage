@@ -1,36 +1,20 @@
-@charset "ISO-8859-1";
+/* ************************************ */
+/* Stili generali                      */
 body {
+  min-height: 100vh;
   margin: 0;
-  position: relative; 
+  position: relative;
+  padding-bottom: 60px; 
   box-sizing: border-box;
 }
 
 #bottomcontainer{
 	margin:auto;
 }
-#container{
-	width: 90%;
-}
-#container2{
-	background-color: white;
-	border-radius: 40px;
-	color: #0c4a7a;
-	justify-content: center;
-	margin: 2%;
-	border: 2px solid #0c4a7a;
-	font-weight: bold;
-	height: 250px;
-	padding: 40px;
-}
-#container3{
-	align-content: center;
-	margin-left: 30%;
-	margin-top: 10%;
-}
+
 #corpopagina{
 	display: inline;
 	width: 100%;
-	overflow-x: auto;
 }
 
 #leftbar{
@@ -46,107 +30,21 @@ body {
   height:60px;
 }
 
-.table{
-	padding: 60px; 
-	background-color: #0c4a7a; 
-	border-radius: 0px 40px 40px 0px;
-	overflow-x: auto;
-	width: 1.5 vw;
+.row{
+	margin-left:0;
+	margin-right:0;
 }
 
-h2{
-	text-align: center;
-	font-variant: all-small-caps;
-	font-weight: normal;
-}
 
 /* ************************************ */
-/* Stili NAVBAR                        */
+/* Stili HEADER                        */
 
-.navbar{
-	width: 100%;
-	background-color: #e9ecef;
-	padding: 20px;
-	height: 70px;
-	
-}
-.logo{
-	margin-left: 20px;
-}
-
-#navbar{
-	padding-left: 0px;
-	background-color: #0c4a7a;
-	color: white;
-	font-size: 16px; 
-	font-variant: small-caps; 
-}
-
-#pippo{
-	background-color: #0c4a7a; 
-}
-
-.navbar .bg-light{
-	background-color: #0c4a7a;
-	font-size: 16px; 
-	font-variant: small-caps; 
-}
-
-.navbar-nav{
-	align-self: right;
-	margin-right: 50px;
-}
-
-.navbar-light .navbar-nav .nav-link{
-	color: #0c4a7a;
-}
-/* ************************************ */
-/* Stili LISTA UTENTI               */
-  
-.barraBlu{
-	font-size: small; 
-	font-variant: small-caps; 
-	text-align: center; 
-	background-color: #0c4a7a; 
-	padding: 10px; 
-	color: white; 
-	font-weight: bold;
-	overflow-x: auto;
-	width: 1.5 vw;
-  }
-
-.tabella{
-	font-size: small; 
-	font-variant: small-caps; 
-	text-align: center; 
-	background-color: #f8fbff; 
-	padding: 10px; 
-	border-bottom: 2px solid #61819f;
-	overflow-x: auto;
-	width: 1.5 vw;
-
-  }
-
-.BoxInterventiLista{
-	padding: 20px;
-	overflow-x: auto;
-	width: 1.5 vw;
-}   
-
-#footer{
-	background-color: #e9ecef;
-	position: fixed;
-	bottom: 0px;
-	width: 100%;
-} 
 
 .login{
 	background-color: white;
+	padding: 50px; 
 	border: 1px solid #0c4a7a; 
 	border-radius: 40px 0px 0px 40px;
-	width: 400px;
-	min-height: 595px;
-	padding: 60px;
 }
 
 .text-center{
@@ -157,178 +55,380 @@ h2{
 	padding: 60px; 
 	background-color: #0c4a7a; 
 	border-radius: 0px 40px 40px 0px;
-	border: 1px solid #0c4a7a; 
-	width: 400px;
-	color: white; 
-}
-.table{
-	padding: 60px; 
-	background-color: #0c4a7a; 
-	border-radius: 0px 40px 40px 0px;
-	overflow-x: auto;
-	width: 1.5 vw;
 }
 
-.btn{
+
+
+/* ************************************ */
+/* Stili NAVBAR                        */
+
+.navbar{
+	width: 100%;
+	background-color: #e9ecef;
+}
+
+#navbar{
+	padding-left: 0px;
+}
+
+
+
+
+/* ************************************ */
+/* Stili BREADCRUMB                    */
+
+.main-breadcrumb{
+	width: 100%;
+}
+
+.breadcrumb{
+	padding: .40rem 2rem;
+}
+
+
+
+/* ************************************ */
+/* Stili INTERVENTI                    */
+
+.card-counter{
+    box-shadow: 2px 2px 10px #DADADA;
+    margin: 5px;
+    padding: 90px 20px;
+    background-color: #fff;
+    height: 150px;
+    border-radius: 5px;
+    transition: .3s linear all;
+  }
+
+  .card-counter:hover{
+    box-shadow: 4px 4px 20px #DADADA;
+    transition: .3s linear all;
+  }
+
+  .card-counter.primary{
+    background-color: #007bff;
+    color: #FFF;
+  }
+
+  .card-counter.danger{
+    background-color: #ef5350;
+    color: #FFF;
+  }  
+
+  .card-counter.success{
+    background-color: #66bb6a;
+    color: #FFF;
+  }  
+
+  .card-counter.info{
+    background-color: #26c6da;
+    color: #FFF;
+  }  
+
+  .card-counter i{
+    font-size: 5em;
+    opacity: 0.2;
+  }
+
+  .card-counter .counter{
+    position: absolute;
+    right: 20px;
+    top: 120px;
+    font-size: 32px;
+    display: block;
+  }
+
+  .card-counter .count-name{
+    position: absolute;
+    top: 20px;
+    font-style: italic;
+    text-transform: capitalize;
+    opacity: 0.7;
+    display: block;
+    font-size: 18px;
+  }
+
+  .labelIntervento{
+	font-weight: bold; 
+	color: #0c4a7a;
+	margin-top: 10px;
+  }
+  
+  
+ /* ************************************ */
+/* Stili LISTA INTERVENTI               */
+  
+ .row .barraBlu{
+	font-size: 16px; 
+	font-variant: small-caps; 
+	text-align: center; 
+	background-color: #0c4a7a; 
+	padding: 10px; 
+	color: white; 
+	font-weight: bold;
+  }
+  
+  .row .tabella{
+	font-size: 16px; 
+	font-variant: small-caps; 
+	text-align: center; 
+	background-color: #f8fbff; 
+	padding: 10px; 
+	border-bottom: 2px solid #61819f;
+	margin-bottom: 14px;
+  }
+  
+.sezioneDettagli {
+    float:left;
+    text-align: left; 
+	background-color: #D7E7F5;
+    padding: 10px;
+    width: 40%;
+    height: 40px;
+    margin-top: 20px;
+}
+
+.sezioneDettagli2 {
+    float:right;
+    background-color: #c7ddf2;
+    padding: 10px;
+    width: 20%;
+    height: 40px;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.btnFasi{
+    color: #000;
+    padding: 4px 4px;
+    font-size: 1rem;
+    line-height: 1.2;
+    margin-top:12px;
+    font-variant: small-caps;
+    font-weight: 500;
+}
+
+.btnFase0{
+	background:#D9D9D9;
+}
+
+.btnFase1{
+	background:#fff2cc;
+}
+.btnFase2{
+	background:#FFD966;
+}
+.btnFase3{
+	background:#F4B084;
+}
+.btnFase4{
+	background:#A9D08E;
+}
+.btnReset{
+	margin-left:12px;
+	background:#eeeeee;
+	border:2px solid #0c4a7a;
+	color: #0c4a7a;
+}
+
+  
+/* ************************************ */
+/* Stili FAILED                			*/
+
+
+.failed{
+	background-color: #0c4a7a;
+	padding: 50px;
+	width: 40%;
+	border-radius: 40px;
+	color: white;
+	font-style: oblique;
+	margin: 50px;
+}
+
+.failedLink{
+	text-decoration: none;
+	color: white;
+}
+
+.btnEco1{
 	font-weight: 600;
 	background: #09b023;
 	border: none;
-	margin-top: 40px;
-	width: 180px;
-	margin-bottom:40px;
 }
 
-#titleSignup{
-	font-weight: bold;
-	color: white; 
-	font-size: large;
-	margin-bottom: 20px;
-}
-#titlelogin{
-	font-weight: bold;
-	color: #0c4a7a; 
-	font-size: large;
-	margin-bottom: 20px;
+
+/* ************************************ */
+/* Stili HOME               			*/
+
+#headerTestata{
+	padding-left: 0px;
+	margin-top: 10px;
 }
 
-.btn btn-primary{
-	margin-top: 80px;
+.testataLogo{
+	background-color: #0c4a7a;
+	padding: 10px;
+	box-shadow: 3px 3px 10px #0c4a7a59;
+	text-align: center;
+	border-radius: 0px 10px 0px 0px;
+}
+
+.testataMenu{
+	background-color: #e9ecef;
+	padding: 10px;
+	box-shadow: 3px 3px 10px #0c4a7a59;
+	border-radius: 0px 0px 10px 0px;
+}
+	
+.testataLista{
+	padding: 10px;
+	list-style: none;
+}
+
+.stileListaMenu{
+	margin-bottom: 10px;
+}
+
+a, .stileListaMenu{
+	color: #0c4a7a;
+	font-weight: 600;
+	font-variant: all-small-caps;
+}
+    
+    
+/* ************************************ */
+/* Stili INTERVENTI LISTA            	*/     
+
+.BoxInterventiLista{
+	padding: 20px;
+} 
+
+/* ************************************ */
+/* Stili INTERVENTI INSERT            	*/  
+ 
+.btnCopy{
+	
+	border: 1px solid #0c4a7a;
+	border-radius: 10px;
+	background-color: #0c4a7a;
+	color: white;
+	font-weight: bold;
+	padding: 4px;  
+} 
+
+
+
+
+/* ************************************ */
+/* Stili UENTI LISTA            	*/     
+
+.btnUserListYes {
+    background: #09b023;
+    color: white;
+    border: 1px solid #09b023;
+    padding: 6px;
+    border-radius: 10px;
+    width: 60px;
+} 
+
+.btnUserListAnnulla {
+    background: #0c4a7a;
+    color: white;
+    border: 1px solid #0c4a7a;
+    padding: 6px;
+    border-radius: 10px;
+    width: 80px;
+}
+
+.modaleEdit{
+    border: 4px solid #0c4a7a;
+}   
+
+
+/* ************************************ */
+/* Stili DETTAGLIO INTERVENTI            	*/ 
+
+.TitoloDettaglio{
+	
+	font-style: oblique;
+	text-align: center;
+	color: #0c4a7a;
+	font-weight: bold;
+	margin-top: 10px;
+}
+           
+.btnCollapse{
+	
+	padding: 8px;
+	border: 1px solid #0c4a7a;
+	border-radius: 10px;
+	color: white;
+	font-weight: bold;
+	font-style: italic;
+	margin-bottom: 15px;
+}
+
+.btnDisabled{
 	background-color: #E1E1E1;
 	color: #0c4a7a;
 }
-.wrapper{
-	text-align: center;
-	position: relative;
-  	overflow: auto;
+.btnActive{
+	background-color: #0c4a7a;
 }
-.column {
-  float: left;
-  width: 45%;
-  margin-right: 20px
+.rightAlign{
+	float:right;
+	padding-right:6px;
 }
 
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.save{
-	margin: 0px;
-    margin-left: 0px;
-	width: 50%;
-	background-color: #09b023;
-	border: 1px solid #09b023;
-	padding: 5px;
-	border-radius: 20px;
-	color: white;
-	font-variant: all-petite-caps;
-	font-weight: bold;
-}
-.content {
-  position: absolute;
-  width: 30000px;
-}
-
-div.background {
-	display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-	margin-top: 10%;
-  background: url(klematis.jpg) repeat;
-  justify-content: center;
-  font-size: large;
-}
-
-div.transbox {
-	margin: 30px;
-	background-color: #f8f9fa;
-	border: 3px solid #0c4a7a;
-	justify-content: center;
-	font-size: large;
-	padding: 40px;
-	border-radius: 20px 0px;
-	text-align: center;
-	width: 50%;
-}
-
-div.transbox p {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  margin: 2%;
-  font-weight: bold;
- color: #0c4a7a;
-  justify-content: center;
-  font-size: 24px;
-}
-
-.navlink{
-	color: #0c4a7a;
-	text-decoration: underline;
-	margin-right: 20px;
-	font-weight: bold;
-}
-
-div.transbox a{
-	text-decoration: none;
-	background-color: #058c05;
+.collapse{
+	
+	background-color: white;
 	padding: 10px;
-	border-radius: 5px;
-	color: white;
-	font-weight: bold;
 }
 
-.row{
-	flex-wrap: nowrap;
+.card{
+	border:	none;
 }
 
-.buttonLogin{
-	margin: 0px;
-    margin-left: 0px;
-	width: 50%;
-	margin-left: 25%;
-	background-color: #09b023;
-	border: 1px solid #09b023;
-	padding: 5px;
-	border-radius: 20px;
-	color: white;
-	font-variant: all-petite-caps;
-	font-weight: bold;
-}
-
-.forgot-password{
-	color: #0c4a7a;
-}
-
-.input{
-	width: 90%;
-}
-
-h4{
-	font-size: 1.5rem;
-	text-align: center;
-	color: #0c4a7a;
-	font-weight: bold;
-	font-variant: all-petite-caps;
-	margin-top: 80px;
-}
-
-.btnSave{
-	font-weight: 600;
-	background: #09b023;
-	border: none;
-	width: 160px;
+.imgCollapse{
+	
 	float: right;
-	color: white;
-	border-radius: 40px;
-	padding: 5px;
-	margin-right: 30px;
+	padding: 6px;
+}
+
+/* ************************************ */
+/* Stili NAVBAR ORIZZONTALE            	*/ 
+
+.navbarOrizzontale{
+	
+	margin-bottom: 20px;
 }
 
 
-.BoxInterventiLista {
-    padding: 20px;
-    margin-bottom: 40px;
-    width: 100%;
+
+/* ************************************ */
+/* Stili MEDIA           	*/ 
+
+
+@media screen and (max-width: 1000px) {
+	
+	#headerTestata{
+		display: none;
+	}
+	
+}
+
+@media screen and (min-width: 1000px) {
+	
+	.navbarOrizzontale{
+	
+		display: none;
+	}
+	
+}
+
+.span {
+	color: #0c4a7a;
+	font-size: bold;
 }
