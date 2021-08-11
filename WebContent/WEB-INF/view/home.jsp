@@ -27,7 +27,7 @@
     		<p>Benvenuti nel Nuovo Portale Dedicato al</p>
     		<p>Progetto Ecobonus 110%</p>
 			<br>
-    		<a href="${pageContext.request.contextPath}/user/login">Effettua il Login</a>
+    		<a href="${pageContext.request.contextPath}/user/login">Logout</a>
   	</div>
   		
 </div>

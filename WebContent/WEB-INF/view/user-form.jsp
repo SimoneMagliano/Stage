@@ -147,15 +147,15 @@
 					</div>
 					
 				</div>
-				
+				<div class="buttonSave">
+				<input type="submit" value="Salva" class="btnSave" />
+				</div>
 				</form:form>
 				</div>
 				
 				</div>
 				
-				<div class="buttonSave">
-				<input type="submit" value="Salva" class="btnSave" />
-				</div>
+				
 				
 	<div id="footer">
 		<jsp:include page="footer.jsp"></jsp:include>
