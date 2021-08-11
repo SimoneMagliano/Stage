@@ -2,6 +2,8 @@ package com.ecobonus.dao;
 
 import java.util.List;
 
+import javax.persistence.NoResultException;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -36,6 +38,23 @@ public User getUser(int theIdUtente) {
 			User theUser = currentSession.get(User.class, theIdUtente);
 				return theUser;
 }
+
+@Override
+public User getUser(String email, String password) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		Query<User> query = currentSession.createQuery("from User where email = :email and password = :password", User.class);
+		query.setParameter("email", email);
+		query.setParameter("password", password);	
+		User user = null;
+		try {
+			user = query.getSingleResult();	
+		} catch (NoResultException e){
+			return null;
+		}
+
+		return user;
+}
+
 @Override
 public void deleteUser(int idUtente) {
 		Session currentSession = sessionFactory.getCurrentSession();
